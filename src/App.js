@@ -20,16 +20,16 @@ function App() {
   };
 
   return (
-    <CartContext.Provider>
-      <ProductContext.Provider value={{ products, addItem }}>
+    <ProductContext.Provider value={{ products, addItem }}>
+      <CartContext.Provider value={{ cart }}>
         <div className="App">
           <Navigation cart={cart} />
           {/* Routes */}
           <Route exact path="/" component={Products} />} />
           <Route path="/cart" render={() => <ShoppingCart cart={cart} />} />
         </div>
-      </ProductContext.Provider>
-    </CartContext.Provider>
+      </CartContext.Provider>
+    </ProductContext.Provider>
   );
 }
 
